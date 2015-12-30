@@ -13,6 +13,9 @@ class Category(models.Model):
 	create_at = models.DateTimeField(auto_now_add=True, auto_now=False)
 	update_at = models.DateTimeField(auto_now_add=False, auto_now=True)
 
+	def __str__(self):
+		return self.description
+
 
 class Equipment(models.Model):
 	category = models.ForeignKey(Category)
@@ -21,6 +24,9 @@ class Equipment(models.Model):
 	spec = models.CharField(max_length=200)
 	create_at = models.DateTimeField(auto_now_add=True, auto_now=False)
 	update_at = models.DateTimeField(auto_now_add=False, auto_now=True)
+	
+	def __str__(self):
+		return self.description
 
 """
 class EquipmentSpec(models.Model):
